@@ -4,19 +4,16 @@ $(function() {
 	
 	grid = lyGrid({
 		pagId : 'paging',
-		l_column : [ {
-			colkey : "title",
-			name : "标题",
+		l_column : [{
+			colkey : "inviteCode",
+			name : "邀请码",
 			isSort:true,
 		}, {
-			colkey : "content",
-			name : "内容",
+			colkey : "groupName",
+			name : "组织名称",
 			isSort:true,
-		}, {
-			colkey : "updateDate",
-			name : "更新时间"
 		}],
-		jsonUrl : rootPath + '/aboutus/findByPage.shtml',
+		jsonUrl : rootPath + '/invitecode/findByPage.shtml',
 		dymCol:true,
 		checkbox : true,
 		serNumber : true
@@ -35,7 +32,10 @@ $(function() {
 function paging_callback(){
 	var parm = {
 			pagId : 'paging_callback',
-			l_column : [ {
+			l_column : [  {
+				colkey : "id",
+				name : "id",
+			}, {
 				colkey : "title",
 				name : "标题",
 				isSort:true,
@@ -67,26 +67,26 @@ function paging_callback(){
 		});
 	});
 }
-$("#addAboutUs").click("click", function() {
-	addAboutUs();
+$("#addInvitecode").click("click", function() {
+	addInvitecode();
 });
-$("#editAboutUs").click("click", function() {
-	editAboutUs();
+$("#editInvitecode").click("click", function() {
+	editInvitecode();
 });
-$("#delAboutUs").click("click", function() {
-	delAboutUs();
+$("#delInvitecode").click("click", function() {
+	delInvitecode();
 });
 
-function addAboutUs() {
+function addInvitecode() {
 	pageii = layer.open({
 		title : "新增",
 		type : 2,
 		area : [ "600px", "80%" ],
-		content : rootPath + '/aboutus/addUI.shtml'
+		content : rootPath + '/invitecode/addUI.shtml'
 	});
 }
 
-function editAboutUs() {
+function editInvitecode() {
 	var cbox = grid.getSelectedCheckbox();
 	if (cbox.length > 1 || cbox == "") {
 		layer.msg("只能选中一个");
@@ -96,17 +96,17 @@ function editAboutUs() {
 		title : "编辑",
 		type : 2,
 		area : [ "600px", "80%" ],
-		content : rootPath + '/aboutus/editUI.shtml?id=' + cbox
+		content : rootPath + '/invitecode/editUI.shtml?id=' + cbox
 	});
 }
-function delAboutUs() {
+function delInvitecode() {
 	var cbox = grid.getSelectedCheckbox();
 	if (cbox == "") {
 		layer.msg("请选择删除项！！");
 		return;
 	}
 	layer.confirm('是否删除？', function(index) {
-		var url = rootPath + '/aboutus/deleteEntity.shtml';
+		var url = rootPath + '/invitecode/deleteEntity.shtml';
 		var s = CommnUtil.ajax(url, {
 			ids : cbox.join(",")
 		}, "json");
