@@ -9,13 +9,13 @@
 </script>
 <style type="text/css">
 .col-sm-3 {
-	width: 20%;
+	width: 25%;
 	float: left;
 	text-align: right;
 }
 
 .col-sm-9 {
-	width: 80%;
+	width: 75%;
 	float: left;
 	text-align: left;
 }

@@ -47,11 +47,8 @@ public class AboutUsController extends BaseController {
 			String dateRange = (String) aboutUsFormMap.get("updateDate");
 			String dateFrom = dateRange.split(" - ")[0];
 			String dateTo = dateRange.split(" - ")[1];
-			DateFormat format1 = new SimpleDateFormat("MM/dd/yyyy hh:mm");
-			DateFormat format2 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-			String aaa = format1.format(new Date());
-			aboutUsFormMap.put("dateFrom", format2.format(format1.parse(dateFrom)));
-			aboutUsFormMap.put("dateTo", format2.format(format1.parse(dateTo)));
+			aboutUsFormMap.put("dateFrom", dateFrom);
+			aboutUsFormMap.put("dateTo", dateTo);
 		}
 		
 		aboutUsFormMap=toFormMap(aboutUsFormMap, pageNow, pageSize,aboutUsFormMap.getStr("orderby"));

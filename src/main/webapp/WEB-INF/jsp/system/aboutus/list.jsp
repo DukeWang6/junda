@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
 <link rel="stylesheet" type="text/css" media="all" href="js/date/daterangepicker-bs3.css" />
-<script type="text/javascript" src="js/date/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/date/moment.js"></script>
 <script type="text/javascript" src="js/date/daterangepicker.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/system/aboutus/list.js"></script>
