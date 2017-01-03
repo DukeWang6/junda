@@ -7,19 +7,22 @@ $(function() {
 		l_column : [{
 			colkey : "modelValue",
 			name : "用户类型",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "title",
 			name : "标题",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "content",
 			name : "协议文件URL",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "updateDate",
 			name : "更新日期",
 			isSort:true,
+			renderData : function(rowindex,data, rowdata, column) {
+				return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+			}
 		}],
 		jsonUrl : rootPath + '/protocol/findByPage.shtml',
 		dymCol:true,

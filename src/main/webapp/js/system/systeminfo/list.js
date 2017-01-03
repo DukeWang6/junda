@@ -7,23 +7,26 @@ $(function() {
 		l_column : [{
 			colkey : "id",
 			name : "id",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "title",
 			name : "标题",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "modelType",
 			name : "用户类型",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "isOntop",
 			name : "是否置顶",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "pushDate",
 			name : "增加日期",
 			isSort:true,
+			renderData : function(rowindex,data, rowdata, column) {
+				return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+			}
 		}],
 		jsonUrl : rootPath + '/systeminfo/findByPage.shtml',
 		dymCol:true,

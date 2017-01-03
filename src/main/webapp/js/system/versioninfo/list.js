@@ -7,35 +7,38 @@ $(function() {
 		l_column : [{
 			colkey : "versionNumber",
 			name : "版本号",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "title",
 			name : "标题",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "fileUrl",
 			name : "文件URL",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "platform",
 			name : "应用类型",
-			isSort:true,
+			isSort:true
 		},  {
 			colkey : "modelType",
 			name : "用户类型",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "downLoadURL",
 			name : "版本连接地址(安卓需要)",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "updateContent",
 			name : "更新内容",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "updateDate",
 			name : "更新日期",
 			isSort:true,
+			renderData : function(rowindex,data, rowdata, column) {
+				return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+			}
 		},{
 			colkey : "id",
 			name : "id",

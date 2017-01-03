@@ -7,14 +7,17 @@ $(function() {
 		l_column : [ {
 			colkey : "title",
 			name : "标题",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "content",
 			name : "内容",
-			isSort:true,
+			isSort:true
 		}, {
 			colkey : "updateDate",
-			name : "更新时间"
+			name : "更新时间",
+			renderData : function(rowindex,data, rowdata, column) {
+				return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+			}
 		}],
 		jsonUrl : rootPath + '/aboutus/findByPage.shtml',
 		dymCol:true,
