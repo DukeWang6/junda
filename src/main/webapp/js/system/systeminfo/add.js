@@ -1,10 +1,9 @@
-//单独验证某一个input  class="checkpass"
-jQuery.validator.addMethod("checkinv", function(value, element) {
+jQuery.validator.addMethod("checktitle", function(value, element) {
 	return (value.length != 0);
-}, "邀请码不能为空");
-jQuery.validator.addMethod("checkgroup", function(value, element) {
+}, "标题不能为空");
+jQuery.validator.addMethod("checkcontent", function(value, element) {
 	return (value.length != 0);
-}, "组织名称不能为空");
+}, "内容不能为空");
 $(function() {
 	$("form").validate({
 		submitHandler : function(form) {// 必须写在验证前面，否则无法ajax提交
@@ -25,26 +24,6 @@ $(function() {
 				}
 			});
 		},
-		/*rules : {
-			"aboutUsFormMap.title" : {
-				required : true,
-				remote : { // 异步验证是否存在
-					type : "POST",
-					url : 'isExist.shtml',
-					data : {
-						name : function() {
-							return $("#title").val();
-						}
-					}
-				}
-			}
-		},*/
-		/*messages : {
-			"userFormMap.accountName" : {
-				required : "请输入标题",
-				remote : "该标题已经存在"
-			}
-		},*/
 		errorPlacement : function(error, element) {// 自定义提示错误位置
 			$(".l_err").css('display', 'block');
 			// element.css('border','3px solid #FFCCCC');

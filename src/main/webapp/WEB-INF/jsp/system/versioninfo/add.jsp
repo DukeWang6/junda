@@ -34,7 +34,7 @@ label[class^="btn btn-default"] {
 			<div class="form-group">
 				<label class="col-sm-3 control-label">请输入版本号</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control checkinv"
+					<input type="text" class="form-control checkversion"
 						placeholder="请输入版本号" name="versionInfoFormMap.versionNumber" id="versionNumber">
 				</div>
 			</div>
@@ -43,7 +43,7 @@ label[class^="btn btn-default"] {
 			<div class="form-group">
 				<label class="col-sm-3 control-label">请输入标题</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control checkinv"
+					<input type="text" class="form-control checktitle"
 						placeholder="请输入标题" name="versionInfoFormMap.title" id="title">
 				</div>
 			</div>
@@ -52,7 +52,7 @@ label[class^="btn btn-default"] {
 			<div class="form-group">
 				<label class="col-sm-3 control-label">请输入文件URL</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control checkinv"
+					<input type="text" class="form-control checkfile"
 						placeholder="请输入文件URL" name="versionInfoFormMap.fileUrl" id="fileUrl">
 				</div>
 			</div>
@@ -108,7 +108,7 @@ label[class^="btn btn-default"] {
 			<div class="form-group">
 				<label class="col-sm-3 control-label">更新内容</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control checkgroup"
+					<input type="text" class="form-control checkupdatecontent"
 						placeholder="请输入更新内容" name="versionInfoFormMap.updateContent" id="updateContent">
 				</div>
 			</div>

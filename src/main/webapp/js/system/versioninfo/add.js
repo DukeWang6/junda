@@ -1,10 +1,15 @@
-//单独验证某一个input  class="checkpass"
-jQuery.validator.addMethod("checkinv", function(value, element) {
+jQuery.validator.addMethod("checkversion", function(value, element) {
 	return (value.length != 0);
-}, "邀请码不能为空");
-jQuery.validator.addMethod("checkgroup", function(value, element) {
+}, "版本号不能为空");
+jQuery.validator.addMethod("checktitle", function(value, element) {
 	return (value.length != 0);
-}, "组织名称不能为空");
+}, "标题不能为空");
+jQuery.validator.addMethod("checkfile", function(value, element) {
+	return (value.length != 0);
+}, "文件URL不能为空");
+jQuery.validator.addMethod("checkupdatecontent", function(value, element) {
+	return (value.length != 0);
+}, "更新内容不能为空");
 $(function() {
 	$("form").validate({
 		submitHandler : function(form) {// 必须写在验证前面，否则无法ajax提交

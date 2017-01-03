@@ -24,7 +24,7 @@
 	<form id="form" name="form" class="form-horizontal" method="post"
 		action="${ctx}/invitecode/editEntity.shtml">
 		<section class="panel panel-default">
-		<input type="hidden" class="form-control checkacc"
+		<input type="hidden" class="form-control"
 			value="${inviteCode.id}" name="inviteCodeFormMap.id" id="id">
 		<div class="panel-body">
 			<div class="form-group">

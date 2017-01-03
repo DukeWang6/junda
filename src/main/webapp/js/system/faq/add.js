@@ -1,4 +1,9 @@
-
+jQuery.validator.addMethod("checktitle", function(value, element) {
+	return (value.length != 0);
+}, "标题不能为空");
+jQuery.validator.addMethod("checkcontent", function(value, element) {
+	return (value.length != 0);
+}, "内容不能为空");
 $(function() {
 	$("form").validate({
 		submitHandler : function(form) {// 必须写在验证前面，否则无法ajax提交

@@ -30,15 +30,15 @@
 			name="faqFormMap.id" id="id">
 				<label class="col-sm-4 control-label">请输入标题</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control"
-						name="faqFormMap.title" id="title" value=${faq.title} >
+					<input type="text" class="form-control checktitle"
+						placeholder="请输入标题" name="faqFormMap.title" id="title" value=${faq.title} >
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
 			<div class="form-group">
 				<label class="col-sm-4 control-label">请输入内容</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" name="faqFormMap.content" id="content" rows="15">${faq.content}</textarea>
+					<textarea class="form-control checkcontent" placeholder="请输入内容" name="faqFormMap.content" id="content" rows="15">${faq.content}</textarea>
 				</div>
 			</div>
 		</div>	

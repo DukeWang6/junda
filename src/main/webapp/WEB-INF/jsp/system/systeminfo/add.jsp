@@ -34,7 +34,7 @@ label[class^="btn btn-default"] {
 			<div class="form-group">
 				<label class="col-sm-3 control-label">请输入标题</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control checkinv"
+					<input type="text" class="form-control checktitle"
 						placeholder="请输入标题" name="systemInfoFormMap.title" id="title">
 				</div>
 			</div>
@@ -64,7 +64,7 @@ label[class^="btn btn-default"] {
 			<div class="form-group">
 				<label class="col-sm-3 control-label">请输入内容</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control checkgroup"
+					<input type="text" class="form-control checkcontent"
 						placeholder="请输入内容" name="systemInfoFormMap.content" id="content">
 				</div>
 			</div>
@@ -91,9 +91,6 @@ label[class^="btn btn-default"] {
 		<button type="submit" class="btn btn-success btn-s-xs">提交</button>
 		</footer> </section>
 	</form>
-	<script type="text/javascript">
-	onloadurl();
-	</script>
 	<script type="text/javascript"
 		src="${ctx}/notebook/notebook_files/bootstrap-filestyle.min.js"></script>
 </body>

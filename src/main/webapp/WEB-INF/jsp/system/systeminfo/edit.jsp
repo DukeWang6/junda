@@ -30,7 +30,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label">请输入标题</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control checkinv"
+					<input type="text" class="form-control checktitle"
 						name="systemInfoFormMap.title" id="title" value='${systemInfo.title}'>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label">请输入内容</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control checkgroup"
+					<input type="text" class="form-control checkcontent"
 						name="systemInfoFormMap.content" id="content" value='${systemInfo.content}'>
 				</div>
 			</div>

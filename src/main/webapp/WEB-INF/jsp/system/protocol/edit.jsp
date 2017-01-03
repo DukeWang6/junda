@@ -28,9 +28,8 @@
 			value="${protocol.id}" name="protocolFormMap.id" id="id">
 		<div class="panel-body">
 			<div class="form-group">
-				<label class="control-label"><span
-					class="h4 font-thin v-middle">用户类型:</span></label>
-				<div class="btn-group m-r">
+				<label class="col-sm-3 control-label">用户类型:</label>
+				<div class="col-sm-9">
 					<button data-toggle="dropdown"
 						class="btn btn-sm btn-default dropdown-toggle">
 						<span class="dropdown-label"></span>${protocol.modelValue}<span class="caret"></span>
@@ -59,7 +58,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label">请输入协议文件URL</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control checkContent" value="${protocol.content}"
+					<input type="text" class="form-control checkgroup" value="${protocol.content}"
 						placeholder="协议文件URL" name="protocolFormMap.content" id="content">
 				</div>
 			</div>
