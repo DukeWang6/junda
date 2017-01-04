@@ -27,6 +27,8 @@ import com.lanyuan.util.Common;
 import com.lanyuan.util.JsonUtils;
 import com.lanyuan.util.POIUtils;
 import com.lanyuan.util.PasswordHelper;
+import com.lanyuan.util.constant.FrozenType;
+
 
 /**
  * 
@@ -54,7 +56,13 @@ public class UserController extends BaseController {
 		userFormMap=toFormMap(userFormMap, pageNow, pageSize,userFormMap.getStr("orderby"));
 		userFormMap.put("column", column);
 		userFormMap.put("sort", sort);
-        pageView.setRecords(userMapper.findUserPage(userFormMap));//不调用默认分页,调用自已的mapper中findUserPage
+		List<UserFormMap> list = userMapper.findUserPage(userFormMap);
+		for(int i = 0; i<list.size(); i++) {
+			UserFormMap user = list.get(i);
+			int locked = Integer.valueOf((String) user.get("locked"));
+			user.set("locked", FrozenType.getName(locked));
+		}
+        pageView.setRecords(list);//不调用默认分页,调用自已的mapper中findUserPage
         return pageView;
 	}
 	

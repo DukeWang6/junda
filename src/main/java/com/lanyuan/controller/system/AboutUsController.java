@@ -1,10 +1,6 @@
 package com.lanyuan.controller.system;
 
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;

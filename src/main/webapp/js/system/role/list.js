@@ -9,18 +9,14 @@ $(function() {
 			width : "50px",
 			hide : true
 		}, {
+			colkey : "roleKey",
+			name : "角色ID"
+		}, {
 			colkey : "name",
 			name : "角色名"
 		}, {
-			colkey : "state",
-			name : "状态",
-			width : "100px",
-		}, {
-			colkey : "roleKey",
-			name : "roleKey"
-		}, {
 			colkey : "description",
-			name : "描述"
+			name : "说明"
 		} ],
 		jsonUrl : rootPath + '/role/findByPage.shtml',
 		dymCol:true,

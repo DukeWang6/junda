@@ -42,7 +42,7 @@ public class RoleController extends BaseController {
 			String pageSize) throws Exception {
 		RoleFormMap roleFormMap = getFormMap(RoleFormMap.class);
 		roleFormMap=toFormMap(roleFormMap, pageNow, pageSize,roleFormMap.getStr("orderby"));
-        pageView.setRecords(roleMapper.findByPage(roleFormMap));
+        pageView.setRecords(roleMapper.seletUserRole(roleFormMap));
 		return pageView;
 	}
 

@@ -36,7 +36,7 @@ label[class^="btn btn-default"]{
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
 			<div class="form-group">
-				<label class="col-sm-3 control-label">roleKey</label>
+				<label class="col-sm-3 control-label">角色ID</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkacc"
 						placeholder="请输入roleKey" name="roleFormMap.roleKey" id="roleKey">
@@ -44,28 +44,10 @@ label[class^="btn btn-default"]{
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
 			<div class="form-group">
-				<label class="col-sm-3 control-label">描述</label>
+				<label class="col-sm-3 control-label">说明</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" placeholder="请输入账号描述"
+					<input type="text" class="form-control" placeholder="请输入说明"
 						name="roleFormMap.description" id="description">
-				</div>
-			</div>
-			<div class="line line-dashed line-lg pull-in"></div>
-			<div class="form-group">
-				<label class="col-sm-3 control-label">角色状态</label>
-				<div class="col-sm-9">
-					<div class="btn-group m-r">
-						<button data-toggle="dropdown"
-							class="btn btn-sm btn-default dropdown-toggle">
-							<span class="dropdown-label">是</span> <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu dropdown-select">
-							<li class=""><a href="#"><input type="radio"
-									name="roleFormMap.state" value="0" checked="checked">是</a></li>
-							<li class="active"><a href="#"><input type="radio"
-									name="roleFormMap.state" value="1">否</a></li>
-						</ul>
-					</div>
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>

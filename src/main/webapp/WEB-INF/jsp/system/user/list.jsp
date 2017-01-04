@@ -18,13 +18,13 @@
 				<div class="btn-group m-r">
 					<button data-toggle="dropdown"
 						class="btn btn-sm btn-default dropdown-toggle">
-						<span class="dropdown-label">是</span> <span class="caret"></span>
+						<span class="dropdown-label">正常</span> <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu dropdown-select">
 						<li class=""><a href="#"><input type="radio"
-								name="userFormMap.locked" value="0" checked="checked">是</a></li>
+								name="userFormMap.locked" value="0" checked="checked">正常</a></li>
 						<li class="active"><a href="#"><input type="radio"
-								name="userFormMap.locked" value="1">否</a></li>
+								name="userFormMap.locked" value="1">冻结</a></li>
 					</ul>
 				</div>
 			</div>

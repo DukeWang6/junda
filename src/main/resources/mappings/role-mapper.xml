@@ -18,8 +18,9 @@
 	select 
 	<include refid="selectId"/>
 	 from sys_role
-		where sys_role.id
-		in (SELECT roleId FROM sys_user_role WHERE
-		userId=#{userId})
+		where 1=1
+		<if test="roleKey != null and roleKey != ''">
+		and roleKey like '%${roleKey}%'
+		</if>
 	</select>
 </mapper>
