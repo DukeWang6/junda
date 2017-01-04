@@ -43,8 +43,12 @@ $("#editProtocol").click("click", function() {
 
 function editProtocol() {
 	var cbox = grid.getSelectedCheckbox();
-	if (cbox.length > 1 || cbox == "") {
+	if (cbox.length > 1) {
 		layer.msg("只能选中一个");
+		return;
+	}
+	if (cbox == "") {
+		layer.msg("必须选中一个");
 		return;
 	}
 	pageii = layer.open({
