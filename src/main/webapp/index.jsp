@@ -62,7 +62,7 @@
 						<span class="arrow top"></span>
 						<li><a href="#" onclick="javascript:updatePasswordLayer();">密码修改</a></li>
 						<li class="divider"></li>
-						<li><a href="logout.shtml">Logout</a></li>
+						<li><a href="logout.shtml">登出</a></li>
 					</ul></li>
 			</ul>
 		</header>
