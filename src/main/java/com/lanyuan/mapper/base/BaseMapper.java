@@ -61,7 +61,7 @@ public interface BaseMapper {
 	 * @throws Exception
 	 */
 	public void editEntity(Object formMap) throws Exception;
-
+	
 	/**
 	 * 1：根据多字段查询 <br/>
 	 * 2：传入继承FormMap的子类对象 <br/>

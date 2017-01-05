@@ -25,7 +25,7 @@
 		action="${ctx}/versioninfo/editEntity.shtml">
 		<section class="panel panel-default">
 		<input type="hidden" class="form-control checkacc"
-			value="${versioninfo.id}" name="versionInfoFormMap.ID" id="ID">
+			value="${versioninfo.ID}" name="versionInfoFormMap.ID" id="ID">
 		<div class="panel-body">
 			<div class="form-group">
 				<label class="col-sm-3 control-label">请输入版本号</label>

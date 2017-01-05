@@ -13,22 +13,22 @@
 		modelType,
 		content,
 		isOntop,
-		pushDate
+		addDate
 	</sql>
 
 	<select id="findSystemInfoPage" resultType="com.lanyuan.entity.SystemInfoFormMap">
 		SELECT
 		<include refid="selectId" />
-		from sys_info
+		from s_msgs
 		where 1 = 1
 		<if test="title != null and title != ''">
 		and title like '%${title}%'
 		</if>
 		<if test="dateFrom != null and dateFrom != ''">
-		and pushDate > '${dateFrom}'
+		and addDate > '${dateFrom}'
 		</if>
 		<if test="dateTo != null and dateTo != ''">
-		and pushDate &lt;= '${dateTo}'
+		and addDate &lt;= '${dateTo}'
 		</if>
 		<if test="isOntop != null and isOntop != ''">
 		and isOntop = '${isOntop}'

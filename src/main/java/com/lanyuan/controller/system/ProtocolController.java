@@ -2,10 +2,15 @@ package com.lanyuan.controller.system;
 
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -30,6 +35,8 @@ import com.lanyuan.util.constant.ModelType;
 public class ProtocolController extends BaseController {
 	@Inject
 	private ProtocolMapper protocolMapper;
+	private static DateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+	private static Session session = SecurityUtils.getSubject().getSession();
 	
 	@RequestMapping("list")
 	public String listUI(Model model) throws Exception {
@@ -60,8 +67,8 @@ public class ProtocolController extends BaseController {
 		String id = getPara("id");
 		if(Common.isNotEmpty(id)){
 			ProtocolFormMap protocolFormMap = protocolMapper.findbyFrist("id", id, ProtocolFormMap.class);
-			int modelType = (Integer) protocolFormMap.get("modelType");
-			protocolFormMap.put("modelValue", ModelType.getName(modelType));
+			int modelType = (Integer) protocolFormMap.get("ModelType");
+			protocolFormMap.put("ModelType", ModelType.getName(modelType));
 			model.addAttribute("protocol", protocolFormMap);
 		}
 		return Common.BACKGROUND_PATH + "/system/protocol/edit";
@@ -73,6 +80,8 @@ public class ProtocolController extends BaseController {
 	public String editEntity(String pageNow,
 			String pageSize,String column,String sort) throws Exception {
 		ProtocolFormMap protocolFormMap = getFormMap(ProtocolFormMap.class);
+		protocolFormMap.put("UpdateUserId", session.getAttribute("userSessionId"));
+		protocolFormMap.put("UpdateDate", formater.format(new Date()));
 		protocolMapper.editEntity(protocolFormMap);
         return "success";
 	}

@@ -36,6 +36,14 @@
 	<update id="editEntity">
 		update table set (${fleids}) where id = (${id})
 	</update>
+	
+	<update id="editEntityID">
+		update table set (${fleids}) where ID = (${id})
+	</update>
+	
+	<update id="editEntityId">
+		update table set (${fleids}) where Id = (${id})
+	</update>
 	<!-- 这里的id可以是userid.或其他 -->
 	<delete id="deleteByNames">
 		delete from table where id in (${ids})
