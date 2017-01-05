@@ -37,7 +37,11 @@ $(function() {
 			name : "更新日期",
 			isSort:true,
 			renderData : function(rowindex,data, rowdata, column) {
-				return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+				if(data==null||data=="") {
+					return null;
+				} else {
+					return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+				}
 			}
 		},{
 			colkey : "id",

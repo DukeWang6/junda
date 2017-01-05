@@ -35,7 +35,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">请输入邀请码</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkinv"
-						placeholder="请输入邀请码" name="inviteCodeFormMap.inviteCode" id="inviteCode">
+						placeholder="请输入邀请码" name="inviteCodeFormMap.InviteCode" id="InviteCode">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
@@ -43,7 +43,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">请输入组织名称</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkgroup"
-						placeholder="请输入组织名称" name="inviteCodeFormMap.groupName" id="groupName">
+						placeholder="请输入组织名称" name="inviteCodeFormMap.GroupName" id="GroupName">
 				</div>
 			</div>
 		</div>	

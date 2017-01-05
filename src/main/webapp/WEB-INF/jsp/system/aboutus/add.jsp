@@ -8,13 +8,13 @@
 	
 </script>
 <style type="text/css">
-.col-sm-4 {
+.col-sm-3 {
 	width: 18%;
 	float: left;
 	text-align: right;
 }
 
-.col-sm-8 {
+.col-sm-9 {
 	width: 82%;
 	float: left;
 	text-align: left;

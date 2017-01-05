@@ -25,7 +25,7 @@
 		select * from table
 	</select>
 
-	<insert id="addEntity" useGeneratedKeys="true" keyProperty="id">
+	<insert id="addEntity" useGeneratedKeys="true" keyProperty="Id">
 		insert into (fleids) values (values)
 	</insert>
 	
@@ -53,6 +53,10 @@
 	
 	<delete id="deleteByAttribute">
 		delete from table where id in ()
+	</delete>
+	
+	<delete id="changeDeleteFlag">
+		update table set (${fleids}) where Id = (${id})
 	</delete>
 	
 	<select id="findbyFrist" resultType="java.util.HashMap">

@@ -25,26 +25,26 @@ $(function() {
 				}
 			});
 		},
-		/*rules : {
-			"aboutUsFormMap.title" : {
+		rules : {
+			"inviteCodeFormMap.inviteCode" : {
 				required : true,
 				remote : { // 异步验证是否存在
 					type : "POST",
 					url : 'isExist.shtml',
 					data : {
-						name : function() {
-							return $("#title").val();
+						inviteCode : function() {
+							return $("#inviteCode").val();
 						}
 					}
 				}
 			}
-		},*/
-		/*messages : {
-			"userFormMap.accountName" : {
-				required : "请输入标题",
-				remote : "该标题已经存在"
+		},
+		messages : {
+			"inviteCodeFormMap.inviteCode" : {
+				required : "请输入邀请码",
+				remote : "该邀请码已经存在"
 			}
-		},*/
+		},
 		errorPlacement : function(error, element) {// 自定义提示错误位置
 			$(".l_err").css('display', 'block');
 			// element.css('border','3px solid #FFCCCC');

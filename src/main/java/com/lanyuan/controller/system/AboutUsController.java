@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.lanyuan.mapper.AboutUsMapper;
 import com.lanyuan.controller.index.BaseController;
 import com.lanyuan.entity.AboutUsFormMap;
+import com.lanyuan.entity.InviteCodeFormMap;
 import com.lanyuan.plugin.PageView;
 import com.lanyuan.util.Common;
 
@@ -97,5 +98,16 @@ public class AboutUsController extends BaseController {
 			aboutUsMapper.deleteByAttribute("id", id, AboutUsFormMap.class);
 		}
 		return "success";
+	}
+	
+	@RequestMapping("isExist")
+	@ResponseBody
+	public boolean isExist(String title) {
+		AboutUsFormMap aboutUsFormMap = aboutUsMapper.findbyFrist("title", title, AboutUsFormMap.class);
+		if (aboutUsFormMap == null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

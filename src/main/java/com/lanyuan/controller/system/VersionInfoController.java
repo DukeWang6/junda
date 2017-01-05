@@ -42,6 +42,8 @@ import com.lanyuan.util.constant.PlatformType;
 public class VersionInfoController extends BaseController {
 	@Inject
 	private VersionInfoMapper versionInfoMapper;
+	private static Session session = SecurityUtils.getSubject().getSession();
+	private static DateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 	
 	@RequestMapping("list")
 	public String listUI(Model model) throws Exception {
@@ -91,11 +93,9 @@ public class VersionInfoController extends BaseController {
 	public String addEntity( String pageNow,
 			String pageSize,String column,String sort) throws Exception {
 		VersionInfoFormMap versionInfoFormMap = getFormMap(VersionInfoFormMap.class);
-		Session session = SecurityUtils.getSubject().getSession();
-		DateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		versionInfoFormMap.put("AddUserId", session.getAttribute("userSessionId"));
 		versionInfoFormMap.put("AddDate", formater.format(new Date()));
-		versionInfoFormMap.put("Id", UUID.randomUUID());;
+		versionInfoFormMap.put("ID", UUID.randomUUID());
 		versionInfoMapper.addEntity(versionInfoFormMap);
         return "success";
 	}
@@ -105,11 +105,11 @@ public class VersionInfoController extends BaseController {
 		String id = getPara("id");
 		if(Common.isNotEmpty(id)){
 		VersionInfoFormMap versionInfoFormMap = versionInfoMapper.findbyFrist("id", id, VersionInfoFormMap.class);
-		int modelType = (Integer) versionInfoFormMap.get("modelType");
-		versionInfoFormMap.put("modelType", ModelType.getName(modelType));
+		int modelType = (Integer) versionInfoFormMap.get("ModelType");
+		versionInfoFormMap.put("ModelType", ModelType.getName(modelType));
 		
-		int platform = (Integer) versionInfoFormMap.get("platform");
-		versionInfoFormMap.put("platform", PlatformType.getName(platform));
+		int platform = (Integer) versionInfoFormMap.get("Platform");
+		versionInfoFormMap.put("Platform", PlatformType.getName(platform));
 		model.addAttribute("versioninfo", versionInfoFormMap);
 		}
 		return Common.BACKGROUND_PATH + "/system/versioninfo/edit";
