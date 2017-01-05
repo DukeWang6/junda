@@ -24,7 +24,7 @@ $(function() {
 				}
 			});
 		},
-		/*rules : {
+		rules : {
 			"aboutUsFormMap.title" : {
 				required : true,
 				remote : { // 异步验证是否存在
@@ -37,9 +37,9 @@ $(function() {
 					}
 				}
 			}
-		},*/
+		},
 		messages : {
-			"userFormMap.accountName" : {
+			"aboutUsFormMap.title" : {
 				required : "请输入标题",
 				remote : "该标题已经存在"
 			}

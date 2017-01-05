@@ -2,8 +2,15 @@ package com.lanyuan.controller.system;
 
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
+
 import javax.inject.Inject;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -13,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.lanyuan.mapper.InviteCodeMapper;
 import com.lanyuan.controller.index.BaseController;
 import com.lanyuan.entity.InviteCodeFormMap;
+import com.lanyuan.entity.UserFormMap;
 import com.lanyuan.plugin.PageView;
 import com.lanyuan.util.Common;
 
@@ -27,6 +35,8 @@ import com.lanyuan.util.Common;
 public class InviteCodeController extends BaseController {
 	@Inject
 	private InviteCodeMapper inviteCodeMapper;
+	private static DateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+	private static Session session = SecurityUtils.getSubject().getSession();
 	
 	@RequestMapping("list")
 	public String listUI(Model model) throws Exception {
@@ -57,6 +67,9 @@ public class InviteCodeController extends BaseController {
 	public String addEntity( String pageNow,
 			String pageSize,String column,String sort) throws Exception {
 		InviteCodeFormMap inviteCodeFormMap = getFormMap(InviteCodeFormMap.class);
+		inviteCodeFormMap.put("AddUserId", session.getAttribute("userSessionId"));
+		inviteCodeFormMap.put("AddDate", formater.format(new Date()));
+		inviteCodeFormMap.put("Id", UUID.randomUUID());
 		inviteCodeMapper.addEntity(inviteCodeFormMap);
         return "success";
 	}
@@ -76,6 +89,8 @@ public class InviteCodeController extends BaseController {
 	public String editEntity(String pageNow,
 			String pageSize,String column,String sort) throws Exception {
 		InviteCodeFormMap inviteCodeFormMap = getFormMap(InviteCodeFormMap.class);
+		inviteCodeFormMap.put("UpdateUserId", session.getAttribute("userSessionId"));
+		inviteCodeFormMap.put("UpdateDate", formater.format(new Date()));
 		inviteCodeMapper.editEntity(inviteCodeFormMap);
         return "success";
 	}
@@ -86,8 +101,23 @@ public class InviteCodeController extends BaseController {
 	public String deleteEntity() throws Exception {
 		String[] ids = getParaValues("ids");
 		for (String id : ids) {
-			inviteCodeMapper.deleteByAttribute("id", id, InviteCodeFormMap.class);
+			if(Common.isNotEmpty(id)){
+				InviteCodeFormMap inviteCodeFormMap = inviteCodeMapper.findbyFrist("id", id, InviteCodeFormMap.class);
+				inviteCodeFormMap.put("DeleteFlag", 1);
+				inviteCodeMapper.editEntity(inviteCodeFormMap);
+			}
 		}
 		return "success";
+	}
+	
+	@RequestMapping("isExist")
+	@ResponseBody
+	public boolean isExist(String inviteCode) {
+		InviteCodeFormMap inviteCodeFormMap = inviteCodeMapper.findbyFrist("inviteCode", inviteCode, InviteCodeFormMap.class);
+		if (inviteCodeFormMap == null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

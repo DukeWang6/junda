@@ -8,7 +8,7 @@ import com.lanyuan.util.FormMap;
 /**
  * user实体表
  */
-@TableSeg(tableName = "sys_protocol", id="id")
+@TableSeg(tableName = "s_user_term", id="id")
 public class ProtocolFormMap extends FormMap<String,Object>{
 
 	/**
