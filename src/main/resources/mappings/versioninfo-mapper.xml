@@ -12,6 +12,7 @@
 		fileUrl,
 		platform,
 		modelType,
+		isMust
 		downLoadURL,
 		updateContent,
 		updateDate,
