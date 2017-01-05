@@ -44,7 +44,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">请输入标题</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checktitle"
-						placeholder="请输入标题" name="versionInfoFormMap.title" id="title">
+						placeholder="请输入标题" name="versionInfoFormMap.Title" id="title">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
@@ -53,7 +53,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">请输入文件URL</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkfile"
-						placeholder="请输入文件URL" name="versionInfoFormMap.fileUrl" id="fileUrl">
+						placeholder="请输入文件URL" name="versionInfoFormMap.FileUrl" id="fileUrl">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
@@ -67,9 +67,9 @@ label[class^="btn btn-default"] {
 					</button>
 					<ul class="dropdown-menu dropdown-select">
 						<li class=""><a href="#"><input type="radio"
-								name="versionInfoFormMap.platform" value="0" checked="checked">安卓</a></li>
+								name="versionInfoFormMap.Platform" value="0" checked="checked">安卓</a></li>
 						<li class=""><a href="#"><input type="radio"
-								name="versionInfoFormMap.platform" value="1">苹果</a></li>
+								name="versionInfoFormMap.Platform" value="1">苹果</a></li>
 					</ul>
 				</div>
 			</div>
@@ -85,13 +85,13 @@ label[class^="btn btn-default"] {
 					</button>
 					<ul class="dropdown-menu dropdown-select">
 						<li class=""><a href="#"><input type="radio"
-								name="versionInfoFormMap.modelType" value="0" checked="checked">乘客</a></li>
+								name="versionInfoFormMap.ModelType" value="0" checked="checked">乘客</a></li>
 						<li class=""><a href="#"><input type="radio"
-								name="versionInfoFormMap.modelType" value="1">出租车司机</a></li>
+								name="versionInfoFormMap.ModelType" value="1">出租车司机</a></li>
 						<li class=""><a href="#"><input type="radio"
-								name="versionInfoFormMap.modelType" value="2">小件快运司机</a></li>
+								name="versionInfoFormMap.ModelType" value="2">小件快运司机</a></li>
 						<li class=""><a href="#"><input type="radio"
-								name="versionInfoFormMap.modelType" value="3">代驾司机</a></li>
+								name="versionInfoFormMap.ModelType" value="3">代驾司机</a></li>
 					</ul>
 				</div>
 			</div>
@@ -101,7 +101,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">版本连接地址(安卓需要)</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkgroup"
-						placeholder="请输入版本连接地址(安卓需要)" name="versionInfoFormMap.downLoadURL" id="downLoadURL">
+						placeholder="请输入版本连接地址(安卓需要)" name="versionInfoFormMap.DownLoadURL" id="downLoadURL">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
@@ -109,7 +109,23 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">更新内容</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkupdatecontent"
-						placeholder="请输入更新内容" name="versionInfoFormMap.updateContent" id="updateContent">
+						placeholder="请输入更新内容" name="versionInfoFormMap.UpdateContent" id="updateContent">
+				</div>
+			</div>
+			<div class="line line-dashed line-lg pull-in"></div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">是否强制更新</label>
+				<div class="col-sm-9">
+					<button data-toggle="dropdown"
+						class="btn btn-sm btn-default dropdown-toggle">
+						<span class="dropdown-label">不强制更新</span><span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-select">
+						<li class=""><a href="#"><input type="radio"
+								name="versionInfoFormMap.IsMust" value="1" checked="checked">不强制更新</a></li>
+						<li class=""><a href="#"><input type="radio"
+								name="versionInfoFormMap.IsMust" value="2">强制更新</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>	
