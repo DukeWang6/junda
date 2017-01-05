@@ -35,7 +35,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">请输入版本号</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkversion"
-						placeholder="请输入版本号" name="versionInfoFormMap.versionNumber" id="versionNumber">
+						placeholder="请输入版本号" name="versionInfoFormMap.VersionNumber" id="VersionNumber">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
@@ -44,7 +44,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">请输入标题</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checktitle"
-						placeholder="请输入标题" name="versionInfoFormMap.Title" id="title">
+						placeholder="请输入标题" name="versionInfoFormMap.Title" id="Title">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
@@ -53,7 +53,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">请输入文件URL</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkfile"
-						placeholder="请输入文件URL" name="versionInfoFormMap.FileUrl" id="fileUrl">
+						placeholder="请输入文件URL" name="versionInfoFormMap.FileUrl" id="FileUrl">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
@@ -101,7 +101,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">版本连接地址(安卓需要)</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkgroup"
-						placeholder="请输入版本连接地址(安卓需要)" name="versionInfoFormMap.DownLoadURL" id="downLoadURL">
+						placeholder="请输入版本连接地址(安卓需要)" name="versionInfoFormMap.DownLoadURL" id="DownLoadURL">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
@@ -109,23 +109,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">更新内容</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkupdatecontent"
-						placeholder="请输入更新内容" name="versionInfoFormMap.UpdateContent" id="updateContent">
-				</div>
-			</div>
-			<div class="line line-dashed line-lg pull-in"></div>
-			<div class="form-group">
-				<label class="col-sm-3 control-label">是否强制更新</label>
-				<div class="col-sm-9">
-					<button data-toggle="dropdown"
-						class="btn btn-sm btn-default dropdown-toggle">
-						<span class="dropdown-label">不强制更新</span><span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu dropdown-select">
-						<li class=""><a href="#"><input type="radio"
-								name="versionInfoFormMap.IsMust" value="1" checked="checked">不强制更新</a></li>
-						<li class=""><a href="#"><input type="radio"
-								name="versionInfoFormMap.IsMust" value="2">强制更新</a></li>
-					</ul>
+						placeholder="请输入更新内容" name="versionInfoFormMap.UpdateContent" id="UpdateContent">
 				</div>
 			</div>
 		</div>	
