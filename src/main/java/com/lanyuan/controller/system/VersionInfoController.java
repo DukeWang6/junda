@@ -5,9 +5,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.inject.Inject;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -88,6 +91,11 @@ public class VersionInfoController extends BaseController {
 	public String addEntity( String pageNow,
 			String pageSize,String column,String sort) throws Exception {
 		VersionInfoFormMap versionInfoFormMap = getFormMap(VersionInfoFormMap.class);
+		Session session = SecurityUtils.getSubject().getSession();
+		DateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		versionInfoFormMap.put("AddUserId", session.getAttribute("userSessionId"));
+		versionInfoFormMap.put("AaddDate", formater.format(new Date()));
+		versionInfoFormMap.put("Id", UUID.randomUUID());
 		versionInfoMapper.addEntity(versionInfoFormMap);
         return "success";
 	}
@@ -113,6 +121,10 @@ public class VersionInfoController extends BaseController {
 	public String editEntity(String pageNow,
 			String pageSize,String column,String sort) throws Exception {
 		VersionInfoFormMap versionInfoFormMap = getFormMap(VersionInfoFormMap.class);
+		Session session = SecurityUtils.getSubject().getSession();
+		DateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		versionInfoFormMap.put("UpdateUserID", session.getAttribute("userSessionId"));
+		versionInfoFormMap.put("UpdateDate", formater.format(new Date()));
 		versionInfoMapper.editEntity(versionInfoFormMap);
         return "success";
 	}
@@ -123,7 +135,11 @@ public class VersionInfoController extends BaseController {
 	public String deleteEntity() throws Exception {
 		String[] ids = getParaValues("ids");
 		for (String id : ids) {
-			versionInfoMapper.deleteByAttribute("id", id, VersionInfoFormMap.class);
+			if(Common.isNotEmpty(id)){
+				VersionInfoFormMap versionInfoFormMap = versionInfoMapper.findbyFrist("id", id, VersionInfoFormMap.class);
+				versionInfoFormMap.put("DeleteFlag", 1);
+				versionInfoMapper.editEntity(versionInfoFormMap);
+			}
 		}
 		return "success";
 	}
