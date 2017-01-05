@@ -94,7 +94,7 @@ public class VersionInfoController extends BaseController {
 		Session session = SecurityUtils.getSubject().getSession();
 		DateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		versionInfoFormMap.put("AddUserId", session.getAttribute("userSessionId"));
-		versionInfoFormMap.put("AaddDate", formater.format(new Date()));
+		versionInfoFormMap.put("AddDate", formater.format(new Date()));
 		versionInfoFormMap.put("Id", UUID.randomUUID());
 		versionInfoMapper.addEntity(versionInfoFormMap);
         return "success";
