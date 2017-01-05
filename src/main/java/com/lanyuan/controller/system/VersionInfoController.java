@@ -95,7 +95,7 @@ public class VersionInfoController extends BaseController {
 		DateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		versionInfoFormMap.put("AddUserId", session.getAttribute("userSessionId"));
 		versionInfoFormMap.put("AddDate", formater.format(new Date()));
-		versionInfoFormMap.put("Id", UUID.randomUUID());
+		versionInfoFormMap.put("Id", UUID.randomUUID());;
 		versionInfoMapper.addEntity(versionInfoFormMap);
         return "success";
 	}
