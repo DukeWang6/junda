@@ -34,9 +34,9 @@
 		left join u_user u  on o.UserId   =  u.id
 		left join d_driver d  on o.Driver   =  d.driverid
 		where 1 = 1
-		and DeleteFlag=0
+		and o.DeleteFlag=0
 		<if test="modleType != null and modleType != ''">
-		and modleType = '%${modleType}%'
+		and o.modleType = '%${modleType}%'
 		</if>
 		<if test="incarDateFrom != null and incarDateFrom != ''">
 		and o.IncarTime >= '${incarDateFrom}'
