@@ -32,17 +32,17 @@ label[class^="btn btn-default"] {
 		<section class="panel panel-default">
 		<div class="panel-body">
 			<div class="form-group">
-				<label class="col-sm-4 control-label">请输入标题</label>
-				<div class="col-sm-8">
+				<label class="col-sm-3 control-label">请输入标题</label>
+				<div class="col-sm-9">
 					<input type="text" class="form-control checktitle"
-						placeholder="请输入标题" name="aboutUsFormMap.title" id="title">
+						placeholder="请输入标题" name="aboutUsFormMap.Title" id="Title">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
 			<div class="form-group">
-				<label class="col-sm-4 control-label">请输入内容</label>
-				<div class="col-sm-8">
-					<textarea class="form-control checkcontent" placeholder="请输入内容" name="aboutUsFormMap.content" id="content" rows="15"></textarea>
+				<label class="col-sm-3 control-label">请输入内容</label>
+				<div class="col-sm-9">
+					<textarea class="form-control checkcontent" placeholder="请输入内容" name="aboutUsFormMap.Content" id="Content" rows="15"></textarea>
 				</div>
 			</div>
 		</div>	

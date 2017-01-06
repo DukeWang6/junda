@@ -17,8 +17,9 @@
 	<select id="findAboutUsPage" resultType="com.lanyuan.entity.AboutUsFormMap">
 		SELECT
 		<include refid="selectId" />
-		from sys_about_us
+		from s_about_as
 		where 1 = 1
+		and DeleteFlag=0
 		<if test="title != null and title != ''">
 		and title like '%${title}%'
 		</if>

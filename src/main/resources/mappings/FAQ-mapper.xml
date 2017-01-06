@@ -18,8 +18,9 @@
 	<select id="findFAQPage" resultType="com.lanyuan.entity.FAQFormMap">
 		SELECT
 		<include refid="selectId" />
-		from sys_faq
+		from s_problems
 		where 1 = 1
+		and DeleteFlag=0
 		<if test="title != null and title != ''">
 		and title like '%${title}%'
 		</if>
