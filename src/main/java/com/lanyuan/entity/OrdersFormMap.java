@@ -13,7 +13,7 @@ public class OrdersFormMap extends FormMap<String,Object>{
 
 	/**
 	 *@descript
-	 *@author lanyuan
+	 *@author edwin Wang
 	 *@date 2015年3月29日
 	 *@version 1.0
 	 */
