@@ -36,7 +36,7 @@
 		where 1 = 1
 		and DeleteFlag=0
 		<if test="modleType != null and modleType != ''">
-		and modleType = '%${title}%'
+		and modleType = '%${modleType}%'
 		</if>
 		<if test="incarDateFrom != null and incarDateFrom != ''">
 		and o.IncarTime >= '${incarDateFrom}'
