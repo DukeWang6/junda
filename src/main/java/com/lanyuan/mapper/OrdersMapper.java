@@ -7,6 +7,7 @@ import com.lanyuan.mapper.base.BaseMapper;
 
 
 public interface OrdersMapper extends BaseMapper{
+	
 
 	public List<OrdersFormMap> findOrderInfoPage(OrdersFormMap ordersFormMap);
 	
