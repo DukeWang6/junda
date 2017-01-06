@@ -17,7 +17,7 @@
 			<div class="form-group">
 				<label class="control-label"> <span
 					class="h4 font-thin v-middle">司机电话:</span></label> <input
-					class="input-medium ui-autocomplete-input" id="driverTel"
+					class="input-medium ui-autocomplete-input" id="driverTel" 
 					name="versionInfoFormMap.driverTel">
 			</div>
 			
