@@ -21,7 +21,6 @@
         o.GrabDate,
         o.modelType,
 	    
-	    
 	    UserId,
 	    u.PhoneNumber,
 	    d.DriverTelephone
