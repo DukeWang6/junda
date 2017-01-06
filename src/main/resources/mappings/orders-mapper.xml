@@ -8,7 +8,6 @@
 	<!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
 	<!-- 以下与实体类的中字段一致 -->
 	<sql id="selectId">
-		
 		<!-- UserId  UserTel  从u_user 表取, DriverTel 从 d_driver 表取 -->
 		o.LocationAddress,
 		o.Destination,
