@@ -58,7 +58,7 @@
 		</if>
 		<if test="ordersState != null and ordersState != ''">
 		and  o.ordersState = '%${ordersState}%'
-		</if>
+		</if> 
 		<if test="column != null">
           order by ${column} ${sort}
         </if>
