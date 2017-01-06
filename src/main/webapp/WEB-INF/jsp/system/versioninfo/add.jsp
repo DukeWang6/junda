@@ -116,6 +116,8 @@ label[class^="btn btn-default"] {
 		<footer class="panel-footer text-right bg-light lter">
 		<button type="submit" class="btn btn-success btn-s-xs">提交</button>
 		</footer> </section>
+		<input type="hidden" class="form-control checktitle"
+						name="versionInfoFormMap.DeleteFlag" id="DeleteFlag" value="0">
 	</form>
 	<script type="text/javascript">
 	onloadurl();
