@@ -12,7 +12,7 @@
 		fileUrl,
 		platform,
 		modelType,
-		isMust
+		isMust,
 		downLoadURL,
 		updateContent,
 		updateDate,
