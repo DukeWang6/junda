@@ -21,14 +21,17 @@ $(function() {
 			name : "是否置顶",
 			isSort:true,
 		}, {
-			colkey : "id",
-			name : "id",
-			isSort:true,
-		}, {
 			colkey : "addDate",
 			name : "增加日期",
-			isSort:true,
-		}],
+			renderData : function(rowindex,data, rowdata, column) {
+				if(data==null || data=="") {
+					return null;
+				} else {
+					return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+				}
+			}
+		}
+		],
 		jsonUrl : rootPath + '/systeminfo/findByPage.shtml',
 		dymCol:true,
 		checkbox : true,
