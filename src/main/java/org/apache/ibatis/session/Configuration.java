@@ -184,7 +184,7 @@ public class Configuration {
 	public static final String ADDENTITY = "addEntity";
 
 	public static final String EDITENTITY = "editEntity";
-
+	
 	public static final String FINDBYFRIST = "findbyFrist";
 
 	public static final String BATCHSAVE = "batchSave";

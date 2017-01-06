@@ -26,19 +26,39 @@
 		<section class="panel panel-default">
 		<div class="panel-body">
 			<div class="form-group">
-			<input type="hidden" class="form-control checkacc" value="${faq.id}"
-			name="faqFormMap.id" id="id">
+				<label class="col-sm-4 control-label">用户类型:</label>
+				<div class="col-sm-8">
+					<button data-toggle="dropdown"
+						class="btn btn-sm btn-default dropdown-toggle">
+						<span class="dropdown-label">${faq.ModelType}</span><span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-select">
+						<li class=""><a href="#"><input type="radio"
+								name="faqFormMap.ModelType" value="0" checked="checked">乘客</a></li>
+						<li class=""><a href="#"><input type="radio"
+								name="faqFormMap.ModelType" value="1">出租车司机</a></li>
+						<li class=""><a href="#"><input type="radio"
+								name="faqFormMap.ModelType" value="2">小件快运司机</a></li>
+						<li class=""><a href="#"><input type="radio"
+								name="faqFormMap.ModelType" value="3">代驾司机</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="line line-dashed line-lg pull-in"></div>
+			<div class="form-group">
+			<input type="hidden" class="form-control checkacc" value="${faq.Id}"
+			name="faqFormMap.Id" id="Id">
 				<label class="col-sm-4 control-label">请输入标题</label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control checktitle"
-						placeholder="请输入标题" name="faqFormMap.title" id="title" value=${faq.title} >
+						placeholder="请输入标题" name="faqFormMap.Title" id="Title" value=${faq.Title} >
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
 			<div class="form-group">
 				<label class="col-sm-4 control-label">请输入内容</label>
 				<div class="col-sm-8">
-					<textarea class="form-control checkcontent" placeholder="请输入内容" name="faqFormMap.content" id="content" rows="15">${faq.content}</textarea>
+					<textarea class="form-control checkcontent" placeholder="请输入内容" name="faqFormMap.Content" id="Content" rows="15">${faq.Content}</textarea>
 				</div>
 			</div>
 		</div>	

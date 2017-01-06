@@ -8,7 +8,7 @@ import com.lanyuan.util.FormMap;
 /**
  * user实体表
  */
-@TableSeg(tableName = "sys_about_us", id="id")
+@TableSeg(tableName = "s_about_as", id="Id")
 public class AboutUsFormMap extends FormMap<String,Object>{
 
 	/**

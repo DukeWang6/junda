@@ -25,7 +25,7 @@
 		action="${ctx}/invitecode/editEntity.shtml">
 		<section class="panel panel-default">
 		<input type="hidden" class="form-control"
-			value="${inviteCode.id}" name="inviteCodeFormMap.id" id="id">
+			value="${inviteCode.Id}" name="inviteCodeFormMap.Id" id="Id">
 		<div class="panel-body">
 			<div class="form-group">
 				<label class="col-sm-3 control-label">请输入邀请码</label>

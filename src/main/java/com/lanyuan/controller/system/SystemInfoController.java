@@ -5,9 +5,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.inject.Inject;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -18,6 +21,7 @@ import com.lanyuan.mapper.AboutUsMapper;
 import com.lanyuan.mapper.SystemInfoMapper;
 import com.lanyuan.controller.index.BaseController;
 import com.lanyuan.entity.AboutUsFormMap;
+import com.lanyuan.entity.InviteCodeFormMap;
 import com.lanyuan.entity.ProtocolFormMap;
 import com.lanyuan.entity.SystemInfoFormMap;
 import com.lanyuan.plugin.PageView;
@@ -36,6 +40,8 @@ import com.lanyuan.util.constant.IsOntopType;
 public class SystemInfoController extends BaseController {
 	@Inject
 	private SystemInfoMapper systemInfoMapper;
+	private static DateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+	private static Session session = SecurityUtils.getSubject().getSession();
 	
 	@RequestMapping("list")
 	public String listUI(Model model) throws Exception {
@@ -67,7 +73,7 @@ public class SystemInfoController extends BaseController {
 			int modelType = (Integer) systemInfo.get("modelType");
 			systemInfo.put("modelType", ModelType.getName(modelType));
 			
-			int isOntop = (Integer) systemInfo.get("isOntop");
+			int isOntop = Integer.valueOf((String) systemInfo.get("isOntop"));
 			systemInfo.put("isOntop", IsOntopType.getName(isOntop));
 		}
         pageView.setRecords(list);//不调用默认分页,调用自已的mapper中findUserPage
@@ -85,6 +91,9 @@ public class SystemInfoController extends BaseController {
 	public String addEntity( String pageNow,
 			String pageSize,String column,String sort) throws Exception {
 		SystemInfoFormMap systemInfoFormMap = getFormMap(SystemInfoFormMap.class);
+		systemInfoFormMap.put("AddUserId", session.getAttribute("userSessionId"));
+		systemInfoFormMap.put("AddDate", formater.format(new Date()));
+		systemInfoFormMap.put("Id", UUID.randomUUID());
 		systemInfoMapper.addEntity(systemInfoFormMap);
         return "success";
 	}
@@ -94,11 +103,11 @@ public class SystemInfoController extends BaseController {
 		String id = getPara("id");
 		if(Common.isNotEmpty(id)){
 		SystemInfoFormMap systemInfoFormMap = systemInfoMapper.findbyFrist("id", id, SystemInfoFormMap.class);
-		int modelType = (Integer) systemInfoFormMap.get("modelType");
-		systemInfoFormMap.put("modelType", ModelType.getName(modelType));
+		int modelType = (Integer) systemInfoFormMap.get("ModelType");
+		systemInfoFormMap.put("ModelType", ModelType.getName(modelType));
 		
-		int isOntop = (Integer) systemInfoFormMap.get("isOntop");
-		systemInfoFormMap.put("isOntop", IsOntopType.getName(isOntop));
+		int isOntop = Integer.valueOf((String) systemInfoFormMap.get("IsOnTop"));
+		systemInfoFormMap.put("IsOnTop", IsOntopType.getName(isOntop));
 		model.addAttribute("systemInfo", systemInfoFormMap);
 		}
 		return Common.BACKGROUND_PATH + "/system/systeminfo/edit";
@@ -120,7 +129,11 @@ public class SystemInfoController extends BaseController {
 	public String deleteEntity() throws Exception {
 		String[] ids = getParaValues("ids");
 		for (String id : ids) {
-			systemInfoMapper.deleteByAttribute("id", id, SystemInfoFormMap.class);
+			if(Common.isNotEmpty(id)){
+				SystemInfoFormMap systemInfoFormMap = systemInfoMapper.findbyFrist("id", id, SystemInfoFormMap.class);
+				systemInfoFormMap.put("DeleteFlag", 1);
+				systemInfoMapper.editEntity(systemInfoFormMap);
+			}
 		}
 		return "success";
 	}

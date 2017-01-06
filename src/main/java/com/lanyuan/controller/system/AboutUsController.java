@@ -1,8 +1,15 @@
 package com.lanyuan.controller.system;
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
+
 import javax.inject.Inject;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -13,6 +20,7 @@ import com.lanyuan.mapper.AboutUsMapper;
 import com.lanyuan.controller.index.BaseController;
 import com.lanyuan.entity.AboutUsFormMap;
 import com.lanyuan.entity.InviteCodeFormMap;
+import com.lanyuan.entity.VersionInfoFormMap;
 import com.lanyuan.plugin.PageView;
 import com.lanyuan.util.Common;
 
@@ -27,6 +35,8 @@ import com.lanyuan.util.Common;
 public class AboutUsController extends BaseController {
 	@Inject
 	private AboutUsMapper aboutUsMapper;
+	private static Session session = SecurityUtils.getSubject().getSession();
+	private static DateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 	
 	@RequestMapping("list")
 	public String listUI(Model model) throws Exception {
@@ -66,6 +76,9 @@ public class AboutUsController extends BaseController {
 	public String addEntity( String pageNow,
 			String pageSize,String column,String sort) throws Exception {
 		AboutUsFormMap aboutUsFormMap = getFormMap(AboutUsFormMap.class);
+		aboutUsFormMap.put("AddUserId", session.getAttribute("userSessionId"));
+		aboutUsFormMap.put("AddDate", formater.format(new Date()));
+		aboutUsFormMap.put("Id", UUID.randomUUID());
 		aboutUsMapper.addEntity(aboutUsFormMap);
         return "success";
 	}
@@ -85,6 +98,8 @@ public class AboutUsController extends BaseController {
 	public String editEntity(String pageNow,
 			String pageSize,String column,String sort) throws Exception {
 		AboutUsFormMap aboutUsFormMap = getFormMap(AboutUsFormMap.class);
+		aboutUsFormMap.put("UpdateUserID", session.getAttribute("userSessionId"));
+		aboutUsFormMap.put("UpdateDate", formater.format(new Date()));
 		aboutUsMapper.editEntity(aboutUsFormMap);
         return "success";
 	}
@@ -95,7 +110,9 @@ public class AboutUsController extends BaseController {
 	public String deleteEntity() throws Exception {
 		String[] ids = getParaValues("ids");
 		for (String id : ids) {
-			aboutUsMapper.deleteByAttribute("id", id, AboutUsFormMap.class);
+			AboutUsFormMap aboutUsFormMap = aboutUsMapper.findbyFrist("id", id, AboutUsFormMap.class);
+			aboutUsFormMap.put("DeleteFlag", 1);
+			aboutUsMapper.editEntity(aboutUsFormMap);
 		}
 		return "success";
 	}

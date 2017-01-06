@@ -4,29 +4,30 @@ $(function() {
 	
 	grid = lyGrid({
 		pagId : 'paging',
-		l_column : [{
-			colkey : "id",
-			name : "id",
-			isSort:true
-		}, {
+		l_column : [ {
 			colkey : "title",
 			name : "标题",
-			isSort:true
+			isSort:true,
 		}, {
 			colkey : "modelType",
 			name : "用户类型",
-			isSort:true
+			isSort:true,
+		}, {
+			colkey : "content",
+			name : "内容",
+			isSort:true,
 		}, {
 			colkey : "isOntop",
 			name : "是否置顶",
-			isSort:true
+			isSort:true,
 		}, {
-			colkey : "pushDate",
+			colkey : "id",
+			name : "id",
+			isSort:true,
+		}, {
+			colkey : "addDate",
 			name : "增加日期",
 			isSort:true,
-			renderData : function(rowindex,data, rowdata, column) {
-				return new Date(data).format("yyyy-MM-dd hh:mm:ss");
-			}
 		}],
 		jsonUrl : rootPath + '/systeminfo/findByPage.shtml',
 		dymCol:true,
@@ -47,11 +48,7 @@ $(function() {
 function paging_callback(){
 	var parm = {
 			pagId : 'paging_callback',
-			l_column : [  {
-				colkey : "id",
-				name : "id",
-				isSort:true,
-			}, {
+			l_column : [ {
 				colkey : "title",
 				name : "标题",
 				isSort:true,
@@ -60,11 +57,19 @@ function paging_callback(){
 				name : "用户类型",
 				isSort:true,
 			}, {
+				colkey : "content",
+				name : "内容",
+				isSort:true,
+			}, {
 				colkey : "isOntop",
 				name : "是否置顶",
 				isSort:true,
 			}, {
-				colkey : "pushDate",
+				colkey : "id",
+				name : "id",
+				isSort:true,
+			}, {
+				colkey : "addDate",
 				name : "增加日期",
 				isSort:true,
 			}],

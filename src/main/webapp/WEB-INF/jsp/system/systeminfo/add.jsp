@@ -35,7 +35,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">请输入标题</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checktitle"
-						placeholder="请输入标题" name="systemInfoFormMap.title" id="title">
+						placeholder="请输入标题" name="systemInfoFormMap.Title" id="Title">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
@@ -49,13 +49,13 @@ label[class^="btn btn-default"] {
 					</button>
 					<ul class="dropdown-menu dropdown-select">
 						<li class=""><a href="#"><input type="radio"
-								name="systemInfoFormMap.modelType" value="0" checked="checked">乘客</a></li>
+								name="systemInfoFormMap.ModelType" value="0" checked="checked">乘客</a></li>
 						<li class=""><a href="#"><input type="radio"
-								name="systemInfoFormMap.modelType" value="1">出租车司机</a></li>
+								name="systemInfoFormMap.ModelType" value="1">出租车司机</a></li>
 						<li class=""><a href="#"><input type="radio"
-								name="systemInfoFormMap.modelType" value="2">小件快运司机</a></li>
+								name="systemInfoFormMap.ModelType" value="2">小件快运司机</a></li>
 						<li class=""><a href="#"><input type="radio"
-								name="systemInfoFormMap.modelType" value="3">代驾司机</a></li>
+								name="systemInfoFormMap.ModelType" value="3">代驾司机</a></li>
 					</ul>
 				</div>
 			</div>
@@ -65,7 +65,7 @@ label[class^="btn btn-default"] {
 				<label class="col-sm-3 control-label">请输入内容</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control checkcontent"
-						placeholder="请输入内容" name="systemInfoFormMap.content" id="content">
+						placeholder="请输入内容" name="systemInfoFormMap.Content" id="Content">
 				</div>
 			</div>
 			<div class="line line-dashed line-lg pull-in"></div>
@@ -79,9 +79,9 @@ label[class^="btn btn-default"] {
 						</button>
 						<ul class="dropdown-menu dropdown-select">
 							<li class=""><a href="#"><input type="radio"
-									name="systemInfoFormMap.isOntop" value="1" checked="checked">是</a></li>
+									name="systemInfoFormMap.IsOnTop" value="1" checked="checked">是</a></li>
 							<li class="active"><a href="#"><input type="radio"
-									name="systemInfoFormMap.isOntop" value="0">否</a></li>
+									name="systemInfoFormMap.IsOnTop" value="0">否</a></li>
 						</ul>
 					</div>
 				</div>

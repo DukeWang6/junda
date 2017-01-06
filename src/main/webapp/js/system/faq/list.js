@@ -23,7 +23,11 @@ $(function() {
 			colkey : "updateDate",
 			name : "更新时间",
 			renderData : function(rowindex,data, rowdata, column) {
-				return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+				if(data==null || data=="") {
+					return null;
+				} else {
+					return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+				}
 			}
 		}],
 		jsonUrl : rootPath + '/faq/findByPage.shtml',

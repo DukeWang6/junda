@@ -12,14 +12,14 @@
 				<label class="control-label"> <span
 					class="h4 font-thin v-middle">标题:</span></label> <input
 					class="input-medium ui-autocomplete-input" id="title"
-					name="versionInfoFormMap.Title">
+					name="versionInfoFormMap.title">
 			</div>
 			
 			<div class="form-group">
 				<label class="control-label"> <span
 					class="h4 font-thin v-middle">更新日期 :</span></label> <input
 					class="input-medium ui-autocomplete-input" id="updateDate"
-					name="versionInfoFormMap.UpdateDate">
+					name="versionInfoFormMap.updateDate">
 			</div>
 			<a href="javascript:void(0)" class="btn btn-default" id="search">查询</a>
 		</form>
