@@ -4,10 +4,12 @@ package com.lanyuan.controller.system;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import javax.inject.Inject;
 
+import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.springframework.stereotype.Controller;
@@ -69,6 +71,13 @@ public class OrdersController extends BaseController {
 		orderFormMap.put("column", column);
 		orderFormMap.put("sort", sort);
         pageView.setRecords(ordersMapper.findOrderInfoPage(orderFormMap));//不调用默认分页,调用自已的mapper中findUserPage
+        // testing  start 验证连表查询并且使用别名是否可以
+        List list =pageView.getRecords();
+        for(Object o : list){
+        	Logger.getLogger(getClass()).debug("O toString ="+ o.toString());
+        	System.out.println(o.toString());
+        }
+     // testing  end
         return pageView;
 	}
 	
