@@ -73,12 +73,19 @@
 	
 <script type="text/javascript">
 	$(document).ready(function() {
-	   $('#updateDate').daterangepicker({
+	   $('#incarDate').daterangepicker({
 	     timePicker: true,
 	     timePickerIncrement: 30,
 	     format: 'YYYY-MM-DD HH:mm'
 	   }, function(start, end, label) {
 	     console.log(start.toISOString(), end.toISOString(), label);
 	   });
+	   $('#outcarDate').daterangepicker({
+		     timePicker: true,
+		     timePickerIncrement: 30,
+		     format: 'YYYY-MM-DD HH:mm'
+		   }, function(start, end, label) {
+		     console.log(start.toISOString(), end.toISOString(), label);
+		   });
 	});
 </script>
