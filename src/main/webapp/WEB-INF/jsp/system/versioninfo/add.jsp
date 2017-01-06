@@ -112,6 +112,22 @@ label[class^="btn btn-default"] {
 						placeholder="请输入更新内容" name="versionInfoFormMap.UpdateContent" id="UpdateContent">
 				</div>
 			</div>
+			<div class="line line-dashed line-lg pull-in"></div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">是否强制更新</label>
+				<div class="col-sm-9">
+					<button data-toggle="dropdown"
+						class="btn btn-sm btn-default dropdown-toggle">
+						<span class="dropdown-label">不强制更新</span><span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-select">
+						<li class=""><a href="#"><input type="radio"
+								name="versionInfoFormMap.IsMust" value="1" checked="checked">不强制更新</a></li>
+						<li class=""><a href="#"><input type="radio"
+								name="versionInfoFormMap.IsMust" value="2">强制更新</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>	
 		<footer class="panel-footer text-right bg-light lter">
 		<button type="submit" class="btn btn-success btn-s-xs">提交</button>
