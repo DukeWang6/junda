@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanyuan.mapper.OrdersMapper">
+	<!--mybatis ehcache缓存配置 -->
+	<!-- 以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 <cache type="org.mybatis.caches.ehcache.LoggingEhcache" 
+		/> -->
+	<!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
+	<!-- 以下与实体类的中字段一致 -->
+	<sql id="selectId">
+		
+		<!-- UserId  UserTel  从u_user 表取, DriverTel 从 d_driver 表取 -->
+		o.LocationAddress,
+		o.Destination,
+		o.OrdersState,
+		o.Subsidy,
+		o.ActualPrice,
+		o.ID,
+		o.IncarTime,
+		o.OutcarTime,
+		o.CancelOrders,
+        o.GrabDate,
+        o.modelType,
+	    
+	    UserId,
+	    u.PhoneNumber,
+	    d.DriverTelephone
+	    
+	</sql>
+
+	<select id="findOrderInfoPage" resultType="com.lanyuan.entity.OrdersFormMap">
+		SELECT
+		<include refid="selectId" />
+		from o_orders o
+		left join u_user u  on o.UserId   =  u.id
+		left join d_driver d  on o.Driver   =  d.driverid
+		where 1 = 1
+		and DeleteFlag=0
+		<if test="modleType != null and modleType != ''">
+		and modleType = '%${title}%'
+		</if>
+		<if test="incarDateFrom != null and incarDateFrom != ''">
+		and o.IncarTime >= '${incarDateFrom}'
+		</if>
+		<if test="incarDateTo != null and incarDateTo != ''">
+		and IncarTime &lt;= '${incarDateTo}'
+		</if>
+		<if test="outcarDateFrom != null and outcarDateFrom != ''">
+		and o.OutcarTime >= '${outcarDateFrom}'
+		</if>
+		<if test="outcarDateTo != null and outcarDateTo != ''">
+		and OutcarTime &lt;= '${outcarDateTo}'
+		</if>
+		<if test="driverTel != null and driverTel != ''">
+		and  d.DriverTelephone = '%${driverTel}%'
+		</if>
+		<if test="userTel != null and userTel != ''">
+		and  u.PhoneNumber = '%${userTel}%'
+		</if>
+		<if test="column != null">
+          order by ${column} ${sort}
+        </if>
+	</select>
+
+	
+</mapper>
