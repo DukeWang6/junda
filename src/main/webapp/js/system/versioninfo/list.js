@@ -44,8 +44,8 @@ $(function() {
 				}
 			}
 		},{
-			colkey : "id",
-			name : "id",
+			colkey : "isMust",
+			name : "是否强制更新",
 			isSort:true,
 		}],
 		jsonUrl : rootPath + '/versioninfo/findByPage.shtml',

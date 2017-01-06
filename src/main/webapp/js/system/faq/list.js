@@ -17,9 +17,6 @@ $(function() {
 			name : "内容",
 			isSort:true
 		}, {
-			colkey : "id",
-			name : "id"
-		}, {
 			colkey : "updateDate",
 			name : "更新时间",
 			renderData : function(rowindex,data, rowdata, column) {

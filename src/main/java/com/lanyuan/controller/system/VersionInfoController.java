@@ -30,6 +30,7 @@ import com.lanyuan.util.Common;
 import com.lanyuan.util.constant.ModelType;
 import com.lanyuan.util.constant.IsOntopType;
 import com.lanyuan.util.constant.PlatformType;
+import com.lanyuan.util.constant.IsMustType;
 
 /**
  * 
@@ -77,6 +78,9 @@ public class VersionInfoController extends BaseController {
 			
 			int platform = (Integer) versionInfo.get("platform");
 			versionInfo.put("platform", PlatformType.getName(platform));
+			
+			int isMust = (Integer) versionInfo.get("isMust");
+			versionInfo.put("isMust", IsMustType.getName(isMust));
 		}
         pageView.setRecords(list);//不调用默认分页,调用自已的mapper中findUserPage
         return pageView;
