@@ -15,7 +15,7 @@ import com.lanyuan.util.Common;
 public class SmallExpController extends BaseController {
 	@Inject
 	private SmallExpMapper smallExpMapper;
-	
+	 
 	@RequestMapping("list")
 	public String listUI(Model model) throws Exception {
 		model.addAttribute("res", findByRes());
