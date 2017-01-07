@@ -165,7 +165,7 @@ function delVersioninfo() {
 		} else {
 			layer.msg('删除失败');
 		}
-	});
+	}); 
 }
 function permissions() {
 	var cbox = grid.getSelectedCheckbox();
