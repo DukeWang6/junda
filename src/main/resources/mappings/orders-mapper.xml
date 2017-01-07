@@ -36,28 +36,28 @@
 		where 1 = 1
 		and o.DeleteFlag=0
 		<if test="modleType != null and modleType != ''">
-		and o.modleType = '%${modleType}%'
+		and o.modelType = '${modleType}'
 		</if>
 		<if test="incarDateFrom != null and incarDateFrom != ''">
 		and o.IncarTime >= '${incarDateFrom}'
 		</if>
 		<if test="incarDateTo != null and incarDateTo != ''">
-		and IncarTime &lt;= '${incarDateTo}'
+		and o.IncarTime &lt;= '${incarDateTo}'
 		</if>
 		<if test="outcarDateFrom != null and outcarDateFrom != ''">
 		and o.OutcarTime >= '${outcarDateFrom}'
 		</if>
 		<if test="outcarDateTo != null and outcarDateTo != ''">
-		and OutcarTime &lt;= '${outcarDateTo}'
+		and o.OutcarTime &lt;= '${outcarDateTo}'
 		</if>
 		<if test="driverTel != null and driverTel != ''">
-		and  d.DriverTelephone = '%${driverTel}%'
+		and  d.DriverTelephone like '%${driverTel}%'
 		</if>
 		<if test="userTel != null and userTel != ''">
-		and  u.PhoneNumber = '%${userTel}%'
+		and  u.PhoneNumber like '%${userTel}%'
 		</if>
 		<if test="ordersState != null and ordersState != ''">
-		and  o.ordersState = '%${ordersState}%'
+		and  o.ordersState like '%${ordersState}%'
 		</if> 
 		<if test="column != null">
           order by ${column} ${sort}

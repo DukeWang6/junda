@@ -91,62 +91,6 @@ $(function() {
 	});
 });
 	
-
-$("#addVersioninfo").click("click", function() {
-	addVersioninfo();
-});
-$("#editVersioninfo").click("click", function() {
-	editVersioninfo();
-});
-$("#delVersioninfo").click("click", function() {
-	delVersioninfo();
-});
-
-function addVersioninfo() {
-	pageii = layer.open({
-		title : "新增",
-		type : 2,
-		area : [ "600px", "80%" ],
-		content : rootPath + '/versioninfo/addUI.shtml'
-	});
-}
-
-function editVersioninfo() {
-	var cbox = grid.getSelectedCheckbox();
-	if (cbox.length > 1) {
-		layer.msg("只能选中一个");
-		return;
-	}
-	if (cbox == "") {
-		layer.msg("必须选中一个");
-		return;
-	}
-	pageii = layer.open({
-		title : "编辑",
-		type : 2,
-		area : [ "600px", "80%" ],
-		content : rootPath + '/versioninfo/editUI.shtml?id=' + cbox
-	});
-}
-function delVersioninfo() {
-	var cbox = grid.getSelectedCheckbox();
-	if (cbox == "") {
-		layer.msg("请选择删除项！！");
-		return;
-	}
-	layer.confirm('是否删除？', function(index) {
-		var url = rootPath + '/versioninfo/deleteEntity.shtml';
-		var s = CommnUtil.ajax(url, {
-			ids : cbox.join(",")
-		}, "json");
-		if (s == "success") {
-			layer.msg('删除成功');
-			grid.loadData();
-		} else {
-			layer.msg('删除失败');
-		}
-	});
-}
 function permissions() {
 	var cbox = grid.getSelectedCheckbox();
 	if (cbox.length > 1 || cbox == "") {
