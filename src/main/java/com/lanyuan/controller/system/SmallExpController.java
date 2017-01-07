@@ -17,7 +17,7 @@ public class SmallExpController extends BaseController {
 	private SmallExpMapper smallExpMapper;
 	 
 	@RequestMapping("list")
-	public String listUI(Model model) throws Exception {
+	public String listUI(Model model) throws Exception { 
 		model.addAttribute("res", findByRes());
 		return Common.BACKGROUND_PATH + "/system/smallexp/list";
 	}
