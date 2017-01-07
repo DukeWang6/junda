@@ -98,7 +98,7 @@ $(function() {
 			name : "是否按时送达",
 			isSort:true,
 		}],
-		jsonUrl : rootPath + '/smallExp/findByPage.shtml',
+		jsonUrl : rootPath + '/smallexp/findByPage.shtml',
 		dymCol:true,
 		checkbox : true,
 		serNumber : true
