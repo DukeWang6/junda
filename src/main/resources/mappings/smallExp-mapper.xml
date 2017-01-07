@@ -39,7 +39,7 @@
 		<include refid="selectId" />
 		from o_small_exp o
 		left join u_user u  on o.UserId   =  u.id
-		left join d_driver d  on o.Driver   =  d.driverid
+		left join d_driver d  on o.DriverId   =  d.driverid
 		where 1 = 1
 		and o.DeleteFlag=0
 		
