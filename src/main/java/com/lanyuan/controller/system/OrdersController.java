@@ -79,8 +79,8 @@ public class OrdersController extends BaseController {
 	@RequestMapping("isExist")
 	@ResponseBody
 	public boolean isExist(String title) {
-		AboutUsFormMap aboutUsFormMap = ordersMapper.findbyFrist("title", title, AboutUsFormMap.class);
-		if (aboutUsFormMap == null) {
+		OrdersFormMap orderFormMap = ordersMapper.findbyFrist("title", title, OrdersFormMap.class);
+		if (orderFormMap == null) {
 			return true;
 		} else {
 			return false;
