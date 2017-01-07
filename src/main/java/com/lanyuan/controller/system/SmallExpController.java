@@ -19,7 +19,7 @@ public class SmallExpController extends BaseController {
 	@RequestMapping("list")
 	public String listUI(Model model) throws Exception {
 		model.addAttribute("res", findByRes());
-		return Common.BACKGROUND_PATH + "/system/smallExp/list";
+		return Common.BACKGROUND_PATH + "/system/smallexp/list";
 	}
 
 	@ResponseBody
