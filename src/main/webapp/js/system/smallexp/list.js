@@ -32,7 +32,7 @@ $(function() {
 			colkey : "ID",
 			name : "订单ID",
 			isSort:true
-		}{
+		},{
 			colkey : "DriverTelephone",
 			name : "司机电话",
 			isSort:true
