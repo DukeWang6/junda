@@ -13,7 +13,7 @@ $(function() {
 			name : "目的地地址",
 			isSort:true
 		}, {
-			colkey : "OrdersState",
+			colkey : "OrderState",
 			name : "订单状态",
 			isSort:true
 		}, {
@@ -29,7 +29,7 @@ $(function() {
 			name : "乘客电话",
 			isSort:true
 		}, {
-			colkey : "ID",
+			colkey : "OrderId",
 			name : "订单ID",
 			isSort:true
 		},{
@@ -37,7 +37,7 @@ $(function() {
 			name : "司机电话",
 			isSort:true
 		},{
-			colkey : "CancelOrders",
+			colkey : "CancelOrder",
 			name : "取消原因",
 			isSort:true
 		},{
