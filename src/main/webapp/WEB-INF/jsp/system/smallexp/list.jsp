@@ -10,22 +10,54 @@
 			name="searchForm">
 			<div class="form-group">
 				<label class="control-label"> <span
-					class="h4 font-thin v-middle">乘客电话:</span></label> <input
-					class="input-medium ui-autocomplete-input" id="userTel"
-					name="SmallExpFormMap.userTel">
+					class="h4 font-thin v-middle">上车时间 :</span></label> <input
+					class="input-medium ui-autocomplete-input" id="incarDate"
+					name="SmallExpFormMap.incarDate">
 			</div>
+			<div class="form-group">
+				<label class="control-label"> <span
+					class="h4 font-thin v-middle">下车时间 :</span></label> <input
+					class="input-medium ui-autocomplete-input" id="outcarDate"
+					name="SmallExpFormMap.outcarDate">
+			</div>
+			
 			<div class="form-group">
 				<label class="control-label"> <span
 					class="h4 font-thin v-middle">司机电话:</span></label> <input
 					class="input-medium ui-autocomplete-input" id="driverTel" 
 					name="SmallExpFormMap.driverTel">
 			</div>
-			 
+			
 			<div class="form-group">
 				<label class="control-label"> <span
-					class="h4 font-thin v-middle">订单状态:</span></label> <input
-					class="input-medium ui-autocomplete-input" id="ordersState"
-					name="SmallExpFormMap.ordersState">
+					class="h4 font-thin v-middle">乘客电话:</span></label> <input
+					class="input-medium ui-autocomplete-input" id="userTel"
+					name="SmallExpFormMap.userTel">
+			</div>
+			 
+			<div class="form-group">
+				<label class="control-label"><span
+					class="h4 font-thin v-middle">订单状态:</span></label>
+				<div class="btn-group m-r">
+					<button data-toggle="dropdown"
+						class="btn btn-sm btn-default dropdown-toggle">
+						<span class="dropdown-label">全部</span> <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-select">
+						<li class="active"><a href="#"><input type="radio"
+								name="SmallExpFormMap.orderState" value="">全部</a></li>
+						<li class=""><a href="#"><input type="radio"
+								name="SmallExpFormMap.orderState" value="1">等待接单</a></li>
+						<li class=""><a href="#"><input type="radio"
+								name="SmallExpFormMap.orderState" value="2">已接单</a></li>
+						<li class=""><a href="#"><input type="radio"
+								name="SmallExpFormMap.orderState" value="3">已结束</a></li>
+						<li class=""><a href="#"><input type="radio"
+								name="SmallExpFormMap.orderState" value="4">已取消</a></li>
+						<li class=""><a href="#"><input type="radio"
+								name="SmallExpFormMap.orderState" value="5">失效</a></li>
+					</ul>
+				</div>
 			</div>
 			
 			<a href="javascript:void(0)" class="btn btn-default" id="search">查询</a>

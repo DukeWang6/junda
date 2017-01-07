@@ -24,9 +24,13 @@ import com.lanyuan.controller.index.BaseController;
 import com.lanyuan.entity.AboutUsFormMap;
 import com.lanyuan.entity.InviteCodeFormMap;
 import com.lanyuan.entity.OrdersFormMap;
+import com.lanyuan.entity.ProtocolFormMap;
 import com.lanyuan.entity.VersionInfoFormMap;
 import com.lanyuan.plugin.PageView;
 import com.lanyuan.util.Common;
+import com.lanyuan.util.constant.ModelType;
+import com.lanyuan.util.constant.OrderState;
+import com.lanyuan.util.constant.CarType;
 
 /**
  * 
@@ -70,7 +74,18 @@ public class OrdersController extends BaseController {
 		orderFormMap=toFormMap(orderFormMap, pageNow, pageSize,orderFormMap.getStr("orderby"));
 		orderFormMap.put("column", column);
 		orderFormMap.put("sort", sort);
-        pageView.setRecords(ordersMapper.findOrderInfoPage(orderFormMap));//不调用默认分页,调用自已的mapper中findUserPage
+		
+		List<OrdersFormMap> list = ordersMapper.findOrderInfoPage(orderFormMap);
+		for(int i=0;i<list.size();i++){
+			OrdersFormMap order = list.get(i);
+			int ordersState = (Integer) order.get("OrdersState");
+			order.put("OrdersState", OrderState.getName(ordersState));
+			
+			int modelType = (Integer) order.get("modelType");
+			order.put("modelType", ModelType.getName(modelType));
+			
+		}
+        pageView.setRecords(list);//不调用默认分页,调用自已的mapper中findUserPage
       
         return pageView;
 	}

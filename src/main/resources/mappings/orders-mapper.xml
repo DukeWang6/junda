@@ -51,13 +51,13 @@
 		and o.OutcarTime &lt;= '${outcarDateTo}'
 		</if>
 		<if test="driverTel != null and driverTel != ''">
-		and  d.DriverTelephone like '%${driverTel}%'
+		and  d.DriverTelephone = '${driverTel}'
 		</if>
 		<if test="userTel != null and userTel != ''">
-		and  u.PhoneNumber like '%${userTel}%'
+		and  u.PhoneNumber = '${userTel}'
 		</if>
 		<if test="ordersState != null and ordersState != ''">
-		and  o.ordersState like '%${ordersState}%'
+		and  o.ordersState = '${ordersState}'
 		</if> 
 		<if test="column != null">
           order by ${column} ${sort}

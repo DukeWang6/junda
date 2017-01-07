@@ -32,7 +32,29 @@ $(function() {
 			colkey : "OrderId",
 			name : "订单ID",
 			isSort:true
-		},{
+		}, {
+			colkey : "PickupTime",
+			name : "上车时间",
+			isSort:true,
+			renderData : function(rowindex,data, rowdata, column) {
+				if(data==null||data=="") {
+					return null;
+				} else {
+					return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+				}
+			}
+		}, {
+			colkey : "ArrivedTime",
+			name : "下车时间",
+			isSort:true,
+			renderData : function(rowindex,data, rowdata, column) {
+				if(data==null||data=="") {
+					return null;
+				} else {
+					return new Date(data).format("yyyy-MM-dd hh:mm:ss");
+				}
+			}
+		}, {
 			colkey : "DriverTelephone",
 			name : "司机电话",
 			isSort:true

@@ -44,14 +44,26 @@
 		and o.DeleteFlag=0
 		
 		<if test="driverTel != null and driverTel != ''">
-		and  d.DriverTelephone = '%${driverTel}%'
+		and  d.DriverTelephone = '${driverTel}'
 		</if>
 		<if test="userTel != null and userTel != ''">
-		and  u.PhoneNumber = '%${userTel}%'
+		and  u.PhoneNumber = '${userTel}'
 		</if>
-		<if test="ordersState != null and ordersState != ''">
-		and  o.ordersState = '%${ordersState}%'
+		<if test="orderState != null and orderState != ''">
+		and  o.orderState = '${orderState}'
 		</if> 
+		<if test="incarDateFrom != null and incarDateFrom != ''">
+		and o.PickupTime >= '${incarDateFrom}'
+		</if>
+		<if test="incarDateTo != null and incarDateTo != ''">
+		and o.PickupTime &lt;= '${incarDateTo}'
+		</if>
+		<if test="outcarDateFrom != null and outcarDateFrom != ''">
+		and o.ArrivedTime >= '${outcarDateFrom}'
+		</if>
+		<if test="outcarDateTo != null and outcarDateTo != ''">
+		and o.ArrivedTime &lt;= '${outcarDateTo}'
+		</if>
 		<if test="column != null">
           order by ${column} ${sort}
         </if>
