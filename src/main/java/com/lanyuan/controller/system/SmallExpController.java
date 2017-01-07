@@ -11,7 +11,7 @@ import com.lanyuan.plugin.PageView;
 import com.lanyuan.util.Common;
 
 @Controller
-@RequestMapping("/smallExp/")
+@RequestMapping("/smallexp/")
 public class SmallExpController extends BaseController {
 	@Inject
 	private SmallExpMapper smallExpMapper;
